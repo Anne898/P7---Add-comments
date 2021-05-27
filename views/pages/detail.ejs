@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <a href="/">&lt;-- Return Home</a>
+
+    <h1>
+        <%= game.name %>
+    </h1>
+    <h3>Genre: <%= game.genre %></h3>
+    <h3>Year: <%= game.year %></h3>
+    <br>
+
+    <h2>Add Review</h2>
+    <form action="/Reviews/create" method="POST">
+        <input type="hidden" name="gameId" value="<%= game.id %>">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <br>
+        <div>
+            <label for="contentReview">Review:</label>
+            <input type="text" id="contentReview" name="contentReview">
+        </div>
+        <br>
+        <button>Add Review</button>
+    </form>
+    <br>
+    <h2>Reviews</h2>
+
+    <% Reviews.forEach((Review)=> { %>
+        <div>
+            <p>Username:<%= Review.username %></p>
+            <p>Review: <%= Review.contentReview %></p>
+        </div>
+        <hr>
+        <% }); %>
+</body>
+
+</html>

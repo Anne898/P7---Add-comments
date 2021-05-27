@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Game</title>
+</head>
+
+<body>
+    <h1>Update Game</h1>
+    <a href="/">&lt;-- Return Home</a>
+    <br>
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value="<%= game.id %>">
+        <div>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="name" id="name" value="<%= game.name %>">
+        </div>
+        <br>
+        <div>
+            <label for="genre">Genre:</label>
+            <br>
+            <input type="text" name="genre" id="genre" value="<%= game.genre %>">
+        </div>
+        <br>
+        <div>
+            <label for="year">Year:</label>
+            <br>
+            <input type="text" name="year" id="year" value="<%= game.year %>">
+        </div>
+        <br>
+        <button>Save</button>
+    </form>
+</body>
+
+</html>
